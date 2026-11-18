@@ -23,7 +23,8 @@ python3 -m vprobe replay data/sample_snapshot.json     # no socket needed
 
 A six-second capture of both snapshots ships in `data/sample_snapshot.json`, so
 `replay` prints a real result before you open a connection. Everything below is
-from that file.
+from that file. `docs/MEASUREMENTS.md` compares it with a second capture taken
+five minutes later, and shows which numbers moved and which did not.
 
 ---
 
@@ -156,7 +157,7 @@ python3 -m vprobe venues               # what can be connected to
 python3 -m vprobe venue --symbol BTC --seconds 12 --save data/mine.json
 python3 -m vprobe gold --seconds 8
 python3 -m vprobe replay data/mine.json
-python3 -m unittest discover -s tests -t .     # 53 tests, no network needed
+python3 -m unittest discover -s tests -t .     # 54 tests, no network needed
 ```
 
 `--json` on any command prints the same analysis as a machine-readable object.

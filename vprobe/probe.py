@@ -27,6 +27,7 @@ arbitrage: the paths between the books, and the fees, are not in the number.
 
 from __future__ import annotations
 
+import gzip
 import json
 import threading
 import time
@@ -199,10 +200,19 @@ def analyse(snapshot: dict) -> dict:
 
 
 def save(snapshot: dict, path: str) -> None:
+    """Write a capture. A .gz suffix compresses it; the JSON is repetitive and
+    gzip takes roughly 8 to 1 off a one-minute file."""
+    if path.endswith(".gz"):
+        with gzip.open(path, "wt", encoding="utf-8", compresslevel=9) as fh:
+            json.dump(snapshot, fh, separators=(",", ":"), sort_keys=True)
+        return
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(snapshot, fh, separators=(",", ":"), sort_keys=True)
 
 
 def load(path: str) -> dict:
+    if path.endswith(".gz"):
+        with gzip.open(path, "rt", encoding="utf-8") as fh:
+            return json.load(fh)
     with open(path, encoding="utf-8") as fh:
         return json.load(fh)

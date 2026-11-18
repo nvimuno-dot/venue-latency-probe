@@ -101,6 +101,17 @@ class TestSnapshotRoundTrip(unittest.TestCase):
         result = probe.analyse(back)
         self.assertEqual(result["venues"]["a"]["quotes"], 3)
 
+    def test_gzip_round_trip(self):
+        snap = {"tool": "venue-latency-probe", "version": "0.1.0",
+                "captured_at": "2026-11-19T00:00:00+00:00", "window_s": 1.0,
+                "symbol": "BTC", "venues": {"a": rec("a", stream("a", 3))}}
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "snap.json.gz")
+            probe.save(snap, path)
+            self.assertLess(os.path.getsize(path), 2000)
+            back = probe.load(path)
+        self.assertEqual(back["venues"]["a"]["quotes"][0]["b"], 100.0)
+
 
 class TestReplay(unittest.TestCase):
     def test_replay_prints_table(self):
