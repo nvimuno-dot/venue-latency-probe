@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "venue-latency-probe"
+version = "0.1.0"
+description = "Snapshot public top-of-book latency, spread and gold token premium from Hyperliquid, Binance, Bybit and OKX using only the standard library."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Baobab Field Press"}]
+keywords = ["market-data", "websocket", "hyperliquid", "lead-lag", "gold", "measurement"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Office/Business :: Financial :: Investment",
+]
+
+[project.urls]
+Homepage = "https://baobab-field-press.shopfa.st"
+
+[project.scripts]
+vprobe = "vprobe.cli:main"
+
+[tool.setuptools]
+packages = ["vprobe"]
