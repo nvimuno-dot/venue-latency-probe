@@ -78,7 +78,7 @@ it starts:
 - a funding interval that changed after your carry model was calibrated
 
 Worked example, six seconds in November 2026: PAXG spot 3,737.75, Binance PAXGUSDT
-perp 3,735.00, Hyperliquid PAXG perp 3,734.65. Both perps about 7 bps below spot,
+perp 3,735.00, Hyperliquid PAXG perp 3,735.00. Both perps about 7 bps below spot,
 about 0.01 bps apart from each other. Whether that 7 bps is reachable depends on
 the funding to hold both legs and the fee to cross each; the number itself is the
 easy part.

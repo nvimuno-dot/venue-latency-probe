@@ -1,6 +1,31 @@
 # venue-latency-probe
 
-Four public order books, one clock, twelve seconds, no account.
+**A lead-lag model was right 87.9 percent of the time and lost 0.42 basis
+points on every trade it took.** This repository is the eight-second
+measurement that shows why, on your own connection: four public order books,
+one clock, no account, no key, no orders.
+
+Run it and you get three numbers nobody quotes together: how often a venue can
+physically reprice, what the spread costs to cross, and how far apart the venues
+actually sit. Those three decide whether a "lag" exists before any chart is
+drawn. The 88 percent number came out of the same measurement, which is why it
+is the first thing this page shows and not the last.
+
+## Start here
+
+| If you have | Take |
+|---|---|
+| three minutes | **[Why 88% accuracy still loses 0.42 bps](https://baobab-field-press.shopfa.st/products/leadlag-paradox-tear-sheet)** - free 3-page tear sheet: the hit rate by window, the 6 bps hurdle, and the break-even formula that no skill level fixes |
+| a question about the weekend | **[The 73-hour gold gap](https://baobab-field-press.shopfa.st/products/gold-gap-efp-tear-sheet)** - free 3-page tear sheet: three weekend designs, the EFP cost stack in dollars an ounce, six structures |
+| a terminal | the commands below. `replay` prints a real result from a shipped capture before you open a socket |
+| a capture and a claim to test | [`docs/TIERSHEET.md`](docs/TIERSHEET.md) - four checks, free, no email |
+| a budget | [Hyperliquid research kit](https://baobab-field-press.shopfa.st/products/hyperliquid-leadlag-research-kit) at 100 USD, [The Three Bridges of Gold](https://baobab-field-press.shopfa.st/products/three-bridges-of-gold) at 49, or both as the [Market-Structure Bundle](https://baobab-field-press.shopfa.st/products/market-structure-bundle) at 129 instead of 149 |
+
+Everything on this page is free, and the code is MIT. The two write-ups at the
+bottom are paid, they say so there, and each has a free three-page tear sheet in
+front of it.
+
+## What it does
 
 `vprobe` connects to the public top-of-book feeds of Hyperliquid, Binance USD-M,
 Bybit and OKX at the same moment, subscribes with no key and no permissions,
@@ -167,9 +192,22 @@ rather than against the parser's own assumptions.
 
 ## 7. The paid part, labelled plainly
 
-The two write-ups this probe is a doorway to were written by me, and this
-repository is the free end of them. If the numbers above are enough, take them
-and go; nothing here expires.
+Everything above is free and stays free. Two write-ups extend it, and each one
+has a three-page tear sheet you can read first, at no cost and with no account.
+If the numbers above are enough, take them and go; nothing here expires.
+
+Free tear sheets, three pages each:
+
+- **[Why 88% accuracy still loses 0.42 bps](https://baobab-field-press.shopfa.st/products/leadlag-paradox-tear-sheet)**
+  - the hit rate by window and horizon, the 7 bps round trip, the break-even
+  formula, and the displacement check that follows it.
+- **[The 73-hour gold gap](https://baobab-field-press.shopfa.st/products/gold-gap-efp-tear-sheet)**
+  - the three weekend designs, the 15 to 25 dollars an ounce the EFP normally
+  carries, and the six structures a gold basis can stand on.
+- [`docs/TIERSHEET.md`](docs/TIERSHEET.md) in this repo - the four checks that
+  decide whether a lead-lag or basis claim survives contact with its own fees.
+
+Paid, if a tear sheet leaves a question open:
 
 - **The Three Bridges of Gold** (30-page PDF, 49 USD): the London vault, the New
   York futures contract and the on-chain oracle, with the EFP cost stack, lease
@@ -179,12 +217,13 @@ and go; nothing here expires.
   the measurement code this probe is cut from, 40 tests, a two-minute sample
   capture, and a 20-page guide to the definitions and their failure modes.
   https://baobab-field-press.shopfa.st/products/hyperliquid-leadlag-research-kit
-- Free, no email: `docs/TIERSHEET.md`, the four checks that decide whether a
-  lead-lag or basis claim survives contact with its own fees.
+- **The Market-Structure Bundle** (129 USD, was 149): both files, one price.
+  https://baobab-field-press.shopfa.st/products/market-structure-bundle
 
 If a number in this README looks wrong, open an issue with your capture file and
 the date. A lead-lag claim without a capture is an opinion; that applies to this
-one too.
+one too. Reply to a receipt within 7 days and a paid file comes back as a
+refund, no questions beyond which number was wrong.
 
 ## License
 
